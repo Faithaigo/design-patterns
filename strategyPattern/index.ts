@@ -48,6 +48,10 @@ class TotalPrice{
         this.scenario  = scenario
     }
 
+    setScenario(scenario:IApplyDiscount){
+        this.scenario = scenario
+    }
+
     calculateTotalPrice(price:number){
         return this.scenario.applyDiscount(price)
     }
@@ -55,22 +59,21 @@ class TotalPrice{
 }
 
 
-
 function unitPrice(price:number,percentage_type?:DiscountType) : number {
+    const noDiscount = new NoDiscount()
+    const amountDiscount = new AmountDiscount(200)
+    const percentageDiscount = new PercentageDiscount(10)
+
+    const baseClass = new TotalPrice(noDiscount)
+
     switch (percentage_type) {
         case DiscountType.AMOUNT:
-            const amountDiscount = new AmountDiscount(200)
-            const amountContext  = new TotalPrice(amountDiscount) 
-            return amountContext.calculateTotalPrice(price)  
-            break; 
+            baseClass.setScenario(amountDiscount)
+            return baseClass.calculateTotalPrice(price)  
         case DiscountType.PERCENTAGE:
-            const percentageDiscount = new PercentageDiscount(10)
-            const percentageContext  = new TotalPrice(percentageDiscount)
-            return percentageContext.calculateTotalPrice(price)  
-            break;  
+            baseClass.setScenario(percentageDiscount)
+            return baseClass.calculateTotalPrice(price)  
         default:
-            const noDiscount = new NoDiscount()
-            const baseClass = new TotalPrice(noDiscount)
             return baseClass.calculateTotalPrice(price)
     } 
 }

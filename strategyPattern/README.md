@@ -1,0 +1,1 @@
+In a sales application, users have the option to apply a discount to a product or leave the original price unchanged. If a discount is applied, it can be specified in two ways: as a fixed amount or as a percentage of the original price. Implement a function to calculate and return the final price of the item based on these scenarios.

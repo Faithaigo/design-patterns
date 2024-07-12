@@ -1,0 +1,1 @@
+In an e-commerce application, when a customer places an order, the system needs to update the inventory, process the payment, and send a confirmation email to the customer.

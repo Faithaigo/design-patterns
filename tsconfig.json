@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "lib": [
+            "ES5",
+            "ES2015",
+            "DOM",
+            "ScriptHost"]
+    }
+}

@@ -1,1 +1,1 @@
-Processing orders can involve several dynamically added steps. For example, when processing a standard order, additional functionalities can be applied: a discount is applied, sales tax is calculated and added, and shipping costs and options like express shipping are included.
+Processing orders can involve several  steps. For example, when processing a standard order, additional rates can be applied: a discount is applied, sales tax is calculated and added, and shipping costs and options like express shipping are included.
